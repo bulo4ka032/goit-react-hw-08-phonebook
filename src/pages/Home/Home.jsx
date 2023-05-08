@@ -1,11 +1,11 @@
-import { Container } from './Home.styled';
+import { Container, Title } from './Home.styled';
 
 const Home = () => {
   return (
     <Container>
-      <h1>
+      <Title>
         Contacts manager welcome page <span role="img">&#128008;</span>
-      </h1>
+      </Title>
     </Container>
   );
 };
