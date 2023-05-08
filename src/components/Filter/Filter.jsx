@@ -1,11 +1,12 @@
-import { FilterCont, FilterTitle } from './Filter.styled';
+import { FilterCont, FilterTitle, FilterInput } from './Filter.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { getFilter } from 'redux/selectors';
-import { setContactFilter } from 'redux/filterSlice';
+import { selectFilter } from 'redux/contacts/selectors';
+import { setContactFilter } from 'redux/contacts/filterSlice';
 
-export const Filter = () => {
+const Filter = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(getFilter);
+  const filter = useSelector(selectFilter);
+
   const onFilter = evt => {
     dispatch(setContactFilter(evt.target.value));
   };
@@ -14,7 +15,8 @@ export const Filter = () => {
     <FilterCont>
       <label htmlFor="filter">
         <FilterTitle>Find contacts by name</FilterTitle>
-        <input
+        <FilterInput
+          placeholder="P..."
           name="filter"
           type="text"
           id="filter"
@@ -25,3 +27,5 @@ export const Filter = () => {
     </FilterCont>
   );
 };
+
+export default Filter;
