@@ -11,7 +11,6 @@ import {
 import catContacts from '../../images/catContacts.png';
 import { selectAllContacts } from 'redux/contacts/selectors';
 import { Notify } from 'notiflix';
-import { nanoid } from 'nanoid';
 import { Filter } from '../index';
 
 const ContactsEditor = () => {
@@ -22,7 +21,6 @@ const ContactsEditor = () => {
     e.preventDefault();
     const form = e.currentTarget;
     const text = {
-      id: 'id-' + nanoid(),
       name: form.elements.name.value,
       number: form.elements.number.value,
     };
